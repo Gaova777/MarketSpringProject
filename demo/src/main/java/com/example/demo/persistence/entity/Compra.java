@@ -3,6 +3,7 @@ package com.example.demo.persistence.entity;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name="compras")
@@ -22,6 +23,12 @@ public class Compra {
     private String comentario;
     private Boolean estado;
 
+    @ManyToOne
+    @JoinColumn(name="id_cliente", insertable = false,updatable = false)
+    private Cliente cliente;
+
+    @OneToMany(mappedBy = "compra")
+    private List<Producto> productos;
     public Integer getIdCompra() {
         return idCompra;
     }
