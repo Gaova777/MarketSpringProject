@@ -64,7 +64,7 @@ public class ComprasProducto {
     public Producto getProducto() {
         return producto;
     }
-
+//new Product of this
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
