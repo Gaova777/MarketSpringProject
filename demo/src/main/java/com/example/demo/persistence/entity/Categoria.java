@@ -13,7 +13,15 @@ public class Categoria {
     private String descripcion;
     private Boolean estado;
 
-    @OneToMany(mappedBy = "categoria")
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
+
+    @OneToMany(mappedBy = "categoria") // "categoria" es el nombre que se le coloco allá en la entidad Producto que relaciona a productos
     private List<Producto> productos;
 
     public Integer getIdCategoria() {
